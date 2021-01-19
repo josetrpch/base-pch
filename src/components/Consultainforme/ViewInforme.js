@@ -16,25 +16,17 @@ const ViewInforme = () => {
   return (
 
       
-        <Grid
-          container                    
-        >
+        <Grid container maxWidth='xl'>
           <Grid 
-          item={true}
-            lg={false}
-            sm={12}
-            xl={12}
-            xs={12}>
-          </Grid>
-          <Grid
-            item={true}
+          item
             lg={12}
             sm={12}
             xl={12}
-            xs={12}
-          >
-          <InformeRessult />
+            xs={12}>
+              <InformeRessult />
           </Grid>
+
+  
       
         </Grid>
       

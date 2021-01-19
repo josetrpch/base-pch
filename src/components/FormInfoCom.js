@@ -4,25 +4,12 @@ import { Link, Link as RouterLink, useHistory } from 'react-router-dom';
 import { TextField, Grid, Button, Avatar, Paper, Typography, makeStyles, CssBaseline } from '@material-ui/core'
 
 import SearchIcon from '@material-ui/icons/SearchRounded';
+import { theme } from '.././themeConfig'
 
 const useStyles = makeStyles((theme) => ({
     root: {
         height: '80vh',
-
-
     },
-
-    palette: {
-        primary: {
-            main: '#303f9f',
-            color: 'white'
-        },
-        secondary: {
-            main: '#ff001e',
-            backgroundColor: '#ff001e'
-        },
-    },
-
     paper: {
         margin: theme.spacing(5, 4),
         display: 'flex',
@@ -42,6 +29,7 @@ const useStyles = makeStyles((theme) => ({
         margin: theme.spacing(1, 0, 1),
         padding: theme.spacing(1),
         color: theme.palette.primary,
+        
 
     },
     cancel: {
@@ -58,8 +46,6 @@ const useStyles = makeStyles((theme) => ({
     },
 
 }));
-
-
 
 const FormMultiplesRut = () => {
     const classes = useStyles();
@@ -127,7 +113,7 @@ const FormMultiplesRut = () => {
                             type="submit"
                             fullWidth
                             variant="contained"
-                            color="primary"
+                            color="secondary"
                             className={classes.submit}
                             onClick={ConsultaDatos}
                         >Informe Comercial
