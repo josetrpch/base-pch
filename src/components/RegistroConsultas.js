@@ -14,27 +14,29 @@ import {
     KeyboardDatePicker
 } from '@material-ui/pickers'
 
+import GraficoBarra from './Graficos/GraficoBarra';
+
 
 const useStyles = makeStyles((theme) => ({
     paper: {
-        margin: theme.spacing(3, 4),
-         
-        
+        margin: theme.spacing(3, 4),                
                 
     },
     form: {
         
         marginLeft: theme.spacing(4),
-        marginRight: theme.spacing(2),
+        marginRight: theme.spacing(3),
         width: '60%',
         marginTop: theme.spacing(4),
         marginBottom: theme.spacing(4),
+        
     },
     submit: {
-        width: '50%',
+        width: '70%',
         margin: theme.spacing(1, 18, 1),
         padding: theme.spacing(1),
         color: theme.palette.primary,
+        
 
     },
 }))
@@ -48,14 +50,15 @@ const RegistroConsultas = () => {
     
     const classes = useStyles();
     return ( 
-    <Grid container justify='space-around' item xs={12} sm={12} xl={12}  component={Paper} elevation={3} className={classes.paper} square>
+        <>
+    <Grid container item xs={12} sm={12} xl={12}  component={Paper} elevation={3} className={classes.paper} square>
         <Grid item md={12} sm={12}>
         <Typography component="h1" variant="h4" style={{textAlign: 'center', paddingTop: '20px'}}> {/*el component es para quelo tome como un h1 */}
             Registro de Consultas            
         </Typography>
         </Grid> 
-        <Grid item md={4} sm={4} >
-            <FormControl className={classes.form} >
+        <Grid item md={12} sm={4} >
+            <FormControl className={classes.form}  >
                 <FormLabel> Usuarios </FormLabel>
                     <NativeSelect
                         id="demo-customized-select-native"
@@ -69,7 +72,7 @@ const RegistroConsultas = () => {
                 
             </FormControl>
         </Grid>
-        <Grid item md={4} sm={4}>
+        <Grid item md={6} sm={4}>
             <FormControl className={classes.form}>
                 <FormLabel> Desde </FormLabel>
                 <MuiPickersUtilsProvider utils={DateFnsUtils}>
@@ -90,7 +93,7 @@ const RegistroConsultas = () => {
             </FormControl>
         </Grid>
 
-        <Grid item md={4} sm={4}>
+        <Grid item md={6} sm={4}>
             <FormControl className={classes.form}>
                 <FormLabel> Hasta </FormLabel>
                 <MuiPickersUtilsProvider utils={DateFnsUtils}>
@@ -110,14 +113,25 @@ const RegistroConsultas = () => {
                 
             </FormControl>
         </Grid>
-        <Container container justify='center'>
-        <Button variant="contained" size="medium" color="primary" className={classes.submit} >
-          Consultar
-        </Button>
 
-
+        <Container container md={12} xs={12} sm={12} >
+            <Grid item >
+                <Button variant="contained" size="large"  color="primary" >
+                Consultar
+                </Button>
+            </Grid>
         </Container>
     </Grid>
+    
+
+    <GraficoBarra />
+
+
+
+    </>
+
+
+
      );
 }
  

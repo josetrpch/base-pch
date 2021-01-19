@@ -171,7 +171,7 @@ const Listas = ({open, handleDrawerClose}) => {
     </List> 
      </Drawer>
      <Switch>
-         <Container maxWidth="md">
+         <Container maxWidth="xl">
            
          
      <main className={classes.content} >

@@ -70,6 +70,7 @@ const FormMultiplesRut = () => {
     const hanledinputvalue = (e) => {
         setValues(e.target.value);
     }
+    
     const ConsultaDatos = () => {
     
             history.push("/informeComercial-result");
