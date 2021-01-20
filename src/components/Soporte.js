@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { TextField, Grid, Button, Avatar, Paper, Typography, makeStyles, CssBaseline, Container } from '@material-ui/core'
+import { TextField, Grid, Button, Avatar, Paper, Typography, makeStyles, CssBaseline, Container, FormLabel } from '@material-ui/core'
 
 
-import SearchIcon from '@material-ui/icons/Search';
+import SendIcon from '@material-ui/icons/Send';
 import BuildIcon from '@material-ui/icons/Build';
 
 const useStyles = makeStyles((theme) => ({
@@ -50,12 +50,12 @@ const useStyles = makeStyles((theme) => ({
     textField: {
         marginLeft: theme.spacing(2),
         marginRight: theme.spacing(2),
-        width: '100vh',
+        width: '100uh',
     },
 
 }));
 
-const FormMultiplesRut = () => {
+const Soporte = () => {
     const classes = useStyles();
     return (
         <div>
@@ -76,9 +76,9 @@ const FormMultiplesRut = () => {
                                                       
                     <Typography component="h1" variant="h4" style={{textAlign: 'center', paddingTop: '5px'}} className={classes.paper} > {/*el component es para quelo tome como un h1 */}  
                     <Avatar className={classes.avatar} variant="rounded">
-                        <SearchIcon />
+                        <BuildIcon />
                     </Avatar>
-                        Consulta Multiple                                  
+                        Soporte                                  
                     </Typography>
                     </Grid>
                     <Grid container xs={12} sm={12} md={12} xl={12}         
@@ -88,79 +88,56 @@ const FormMultiplesRut = () => {
                                 
            
                     <form className={classes.form} noValidate autoComplete="off">
-                    <TextField
-                            type="text"
-                            id="standar-error"
-                            margin="normal"
-                            fullWidth
-                            name="NRut"
-                            variant="outlined"
-                            required
-                            label="Rut"
-                            autoFocus
-                            inputProps={{ maxLength: 9 }}
-                            helperText="Formato Requerido (264641799)"
-                            
-                        />
+                    <FormLabel> Correo </FormLabel>
                         <TextField
                             type="text"
-                            xs={12} sm={12} md={12} xl={12}  id="standar-error"
+                            id="correo"
                             margin="normal"
                             fullWidth
-                            name="Nserie"
+                            name="correo"
                             variant="outlined"
-                            required
-                            label="Rut"
+                            required                           
                             autoFocus
-                            inputProps={{ maxLength: 9 }}
-                            helperText="Formato Requerido (601456988)"
                             
-
                         />
-                                                <TextField
+                        <FormLabel> Asunto </FormLabel>
+                        <TextField
                             type="text"
-                            xs={12} sm={12} md={12} xl={12}  id="standar-error"
+                            id="asunto"
+                            xs={12} sm={12} md={12} xl={12}  
                             margin="normal"
                             fullWidth
-                            name="Nserie"
+                            name="asunto"
                             variant="outlined"
-                            required
-                            label="Rut"
-                            autoFocus
-                            inputProps={{ maxLength: 9 }}
-                            helperText="Formato Requerido (601456988)"
+                            required                           
                             
-
                         />
-                                                <TextField
+                        <FormLabel> Descripcion </FormLabel>
+                            <TextField
                             type="text"
-                            xs={12} sm={12} md={12} xl={12}  id="standar-error"
+                            id="descripcion"
+                            xs={12} sm={12} md={12} xl={12}  
                             margin="normal"
                             fullWidth
-                            name="Nserie"
+                            multiline
+                            rows={6}
                             variant="outlined"
-                            required
-                            label="Rut"
-                            autoFocus
-                            inputProps={{ maxLength: 9 }}
-                            helperText="Formato Requerido (601456988)"
+                            required                               
+                            fullWidth
                             
 
-                        />
-                        
-                  
+                        />                        
                         <Button
                             type="submit"
-                            xs={12} sm={12} md={12} xl={12}  fullWidth
+                            xs={12} sm={12} md={12} xl={12}  
                             variant="contained"
                             color="primary"
                             className={classes.submit}
-                            
-                        >Informe Comercial
+                            endIcon={<SendIcon />}
+                        >
+                            Enviar
                     </Button>
-                        <Button variant="primary" color="segondary" className={classes.cancel}>
-                            Cancelar
-                    </Button>
+
 
 
                     </form>
@@ -172,4 +149,4 @@ const FormMultiplesRut = () => {
         </div>
     )
 }
-export default FormMultiplesRut;
+export default Soporte;
