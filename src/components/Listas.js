@@ -81,8 +81,11 @@ const Listas = ({open, handleDrawerClose}) => {
     const classes = useStyle()
 
     const [anchorEl, setAnchorEl] = useState(null);
+    const [maxAncho, setAncho] = useState(null);
     const abrir = Boolean(anchorEl);
-
+    const path = String(maxAncho);
+   
+   
     const handleClick = (event) => {
       setAnchorEl(event.currentTarget);
     };
@@ -91,7 +94,9 @@ const Listas = ({open, handleDrawerClose}) => {
       setAnchorEl(null);
     };
 
+   
 
+    
     return (
         <>
      <BrowserRouter>   
@@ -173,8 +178,7 @@ const Listas = ({open, handleDrawerClose}) => {
      </Drawer>
      <Switch>
          <Container maxWidth="xl">
-           
-         
+
      <main className={classes.content} >
      
          <Route exact path="/informecomercial" component={ FormInfoCom }/>
@@ -184,6 +188,7 @@ const Listas = ({open, handleDrawerClose}) => {
          <Route exact path="/soporte" component={Soporte} />
          <Route exact path="/verificacion"/>
          <Route exact path="/informeComercial-result" component={ViewInforme} />
+        
     </main>
     </Container>
      </Switch>

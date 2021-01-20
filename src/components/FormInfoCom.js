@@ -2,7 +2,6 @@ import React from 'react';
 
 import { TextField, Grid, Button, Avatar, Paper, Typography, makeStyles, CssBaseline, Container } from '@material-ui/core'
 
-
 import BuildIcon from '@material-ui/icons/Build';
 import SearchIcon from '@material-ui/icons/Search';
 
@@ -17,8 +16,8 @@ const useStyles = makeStyles((theme) => ({
             main: '#ff001e',
             backgroundColor: '#ff001e'
         },
-    },
 
+    },
     paper: {
         margin: theme.spacing(5, 1),
         display: 'flex',
@@ -38,6 +37,8 @@ const useStyles = makeStyles((theme) => ({
         margin: theme.spacing(1, 0, 1),
         padding: theme.spacing(1),
         color: theme.palette.primary,
+        backgroundColor : '#bf0215',
+        
 
     },
     cancel: {
@@ -45,6 +46,7 @@ const useStyles = makeStyles((theme) => ({
         margin: theme.spacing(2, 0, 1),
         padding: theme.spacing(1),
         color: 'white',
+
 
     },
     textField: {
@@ -56,6 +58,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const FormInfoCom = () => {
+
     const classes = useStyles();
     return (
         <div>
@@ -122,12 +125,12 @@ const FormInfoCom = () => {
                             type="submit"
                             fullWidth
                             variant="contained"
-                            color="primary"
+                            color="secondary"
                             className={classes.submit}
                             
                         >Informe Comercial
                     </Button>
-                        <Button variant="primary" color="segondary" className={classes.cancel}>
+                        <Button variant="primary" color="secondary" className={classes.cancel}>
                             Cancelar
                     </Button>
 
