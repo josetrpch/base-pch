@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { TextField, Grid, Button, Avatar, Paper, Typography, makeStyles, CssBaseline, Container } from '@material-ui/core'
-
+import { useHistory } from 'react-router-dom';
 import BuildIcon from '@material-ui/icons/Build';
 import SearchIcon from '@material-ui/icons/Search';
 
@@ -59,7 +59,13 @@ const useStyles = makeStyles((theme) => ({
 
 const FormInfoCom = () => {
 
+    const ConsultaDatos = () => {
+    
+        history.push("/informeComercial-result");
+    }
+
     const classes = useStyles();
+    const history = useHistory();
     return (
         <div>
         <Container container xs={12} sm={8} md={8} xl={8} 
@@ -127,6 +133,7 @@ const FormInfoCom = () => {
                             variant="contained"
                             color="secondary"
                             className={classes.submit}
+                            onClick={ConsultaDatos}
                             
                         >Informe Comercial
                     </Button>
