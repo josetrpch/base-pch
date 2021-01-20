@@ -16,7 +16,7 @@ const ViewInforme = () => {
   return (
 
       
-        <Grid container maxWidth='xl'>
+        <Grid container maxWidth='xl'  >
           <Grid 
           item
             lg={12}

@@ -28,7 +28,7 @@ const Graficos = ({ className, ...rest }) => {
     datasets: [
       {
         backgroundColor: colors.grey[250],
-        data: [50, 5, 19, 27, 29, 19, 20],
+        data: [0, 10, 0, 29, 29, 0, 0],
         label: 'Q: Morosidad'
       },
      /* {

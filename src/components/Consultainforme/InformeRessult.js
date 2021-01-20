@@ -1,20 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import clsx from 'clsx';
-import { TextField, Grid, Button, Avatar, Paper, Typography, makeStyles, CssBaseline, Card, CardContent, Box, Container, Divider } from '@material-ui/core';
-import SearchRounded, { Height } from '@material-ui/icons/SearchRounded';
-import CircularProgress from '@material-ui/core/CircularProgress';
-import { green } from '@material-ui/core/colors';
+import { TextField, Grid, Button, Avatar, Paper, Typography, makeStyles, CssBaseline, Card, CardContent, Box, Container, Divider, Tooltip } from '@material-ui/core';
+
 import Fab from '@material-ui/core/Fab';
-import CheckIcon from '@material-ui/icons/Check';
-import ClearIcon from '@material-ui/icons/Clear';
 
 
 import Graficos from '../Graficos/Graficos';
-
+import TblDetalleConsultasRut from './TblDetalleConsultasRut';
+import SituacionRiesgoCard from '../Graficos/SituacionRiesgoCard';
+import GrafCumplimiento from '../Graficos/GrafCumplimiento';
+import TblDOcumentoPortalchq from './TblDOcumentoPortalchq';
 const useStyles = makeStyles((theme) => ({
     root: {
-        height: '100%',
+        height: 'auto',
         width: '100%',
         paddingBottom: theme.spacing(3),
         paddingTop: theme.spacing(3)
@@ -36,6 +35,7 @@ const useStyles = makeStyles((theme) => ({
         width: '100%',
         display: 'flex',
         flexDirection: 'column',
+        
 
 
     },
@@ -59,10 +59,10 @@ const useStyles = makeStyles((theme) => ({
     },
 
     ButtonDanger: {
-        backgroundColor: '#bf0215',
+        backgroundColor: '#e8e3e4',
         color: 'white',
         '&:hover': {
-            backgroundColor: '#b53541',
+            backgroundColor: '#d1cbcc',
             color: 'white',
         },
     },
@@ -81,39 +81,80 @@ const InformeRessult = () => {
             <Grid component="main" >
                 <CssBaseline />
                 <Card>
+                    
                     <CardContent>
-                        <Grid item xs={6} sm={6} xl={6} md={6} component={Paper} elevation={0} className={classes.paper} square>
-                            <Typography component="h1" variant="h3" color="primary"> {/*el component es para que lo tome como un h1 */}
-                    COMERCIALIZADORA AIS SPA
-                    </Typography>
-                            <Typography varient="p">Rut: 76.540.287-5</Typography>
-                            <Typography varient="p">Rubro: VTA POR MAYOR DE ART DE PERF COSMETICO Y PROD LIMP</Typography>
-                            <Typography varient="p">Teléfonos: 938669776 - 938669789 </Typography>
+                    <Typography varient="p" align="right"><strong>Folio: No. 5723769</strong></Typography>
+                        <Grid item xs={12} sm={12} xl={12} md={12}  className={classes.paper}>
+                       
+                            <Typography component="h1" variant="h4" color="primary"> {/*el component es para que lo tome como un h1 */}
+                            COMERCIALIZADORA AIS SPA
+                            </Typography>
+                            <Typography varient="p"><strong>Rut:</strong> 76.540.287-5</Typography>
+                            <Typography varient="p"><strong>Rubro:</strong> VTA POR MAYOR DE ART DE PERF COSMETICO Y PROD LIMP</Typography>
+                            <Typography varient="p"><strong>Teléfonos:</strong> 938669776 - 938669789 </Typography>
+                           
                         </Grid>
-                        <Grid container direction="row" >
+                        <Grid container direction="row" justify="space-evenly" alignItems="baseline" >
+                        <Grid item={true} xs={12} md={3}  >
+                              
+                                <CardContent>
 
-                            <Grid item={true} xs={12} md={6}  >
+                                    <Typography align="center">Montos total impagados</Typography>
 
+                                    <Typography variant="h5" align="center" style={{color: 'red'}}>No registra</Typography>
+                                    
+                                </CardContent>
+                                <Typography align="center">Puntaje calculado al 27 OC 2020</Typography>
+                                
+
+                            </Grid>
+                            <Grid item={true} xs={12} md={3}  >
+                                
+                                <CardContent>
+
+                                    <Typography align="center">Total documentos impagados</Typography>
+
+                                    <Typography variant="h5" align="center" style={{color: 'red'}}>No registra</Typography>
+                                    
+                                </CardContent>
+                                <Typography align="center">Puntaje calculado al 27 OCT 2020</Typography>
+                                
+
+                            </Grid>
+
+                            <Grid item={true} xs={12} md={3}  >
+                                
                                 <CardContent>
 
                                     <Typography align="center">Indicadores de Riesgo</Typography>
 
-                                    <Typography variant="h4" align="center">999</Typography>
-
-
+                                    <Typography variant="h5" align="center">999</Typography>
+                                    
                                 </CardContent>
+                                <Typography align="center">Puntaje calculado al 27 OCt 2020</Typography>
+                                
 
                             </Grid>
-                            <Grid item={true} xs={12} md={6} >
-
+                            <Grid item={true} xs={12} md={3} >
+                                
                                 <CardContent>
                                     <Typography align="center"> Tamaño de la Empresa</Typography>
-                                    <Typography variant="h4" align="center">Grande</Typography>
+                                    <Typography variant="h5" align="center">Grande</Typography>
                                 </CardContent>
-
+                                <Typography align="center">Facturación: 100.000 UF o más</Typography>
+                                
                             </Grid>
 
                         </Grid>
+                        </CardContent>
+                        </Card>
+                        </Grid>
+
+                        <Grid component="main" className={classes.root} >
+                        
+                        <Card>
+                    
+                    <CardContent>
                         <Box
                             mt={3}
                             mb={1}
@@ -138,7 +179,10 @@ const InformeRessult = () => {
                                                 className={classes.ButtonDanger}
                                                 align="center"
                                             >
-                                                <ClearIcon /><Typography variant="h5" align="center" ></Typography>
+                                               <Tooltip title="Ver más información">
+                                               <Typography variant="h5" align="center" >No</Typography>
+                                                </Tooltip>
+                                              
                                             </Fab>
                                         </div>
                                     </CardContent>
@@ -159,7 +203,7 @@ const InformeRessult = () => {
                                                 className={classes.buttonSuccess}
                                                 align="center"
                                             >
-                                                <CheckIcon /><Typography variant="h5" align="center" > </Typography>
+                                               <Typography variant="h5" align="center" >Si</Typography>
                                             </Fab>
                                         </div>
                                     </CardContent>
@@ -179,8 +223,11 @@ const InformeRessult = () => {
                                                 className={classes.buttonSuccess}
                                                 align="center"
                                             >
-                                                <CheckIcon /><Typography variant="h5" align="center" > 5</Typography>
+                                                <Typography variant="h5" align="center" >Si</Typography> &nbsp;
+                                                <Typography variant="p" align="center" >2</Typography>
                                             </Fab>
+                                            <br />
+                                                <Typography variant="p" align="center" ><strong>Total Avalúo</strong> &nbsp; $ 55.404.682</Typography>
                                         </div>
 
                                     </CardContent>
@@ -200,7 +247,7 @@ const InformeRessult = () => {
                                                 className={classes.buttonSuccess}
                                                 align="center"
                                             >
-                                                <CheckIcon />
+                                               <Typography variant="h5" align="center" >Si</Typography>
                                             </Fab>
                                         </div>
 
@@ -208,6 +255,7 @@ const InformeRessult = () => {
                                     </CardContent>
 
                                 </Grid>
+                             
                             </Grid>
 
 
@@ -221,22 +269,100 @@ const InformeRessult = () => {
 
             </Grid>
 
-            <Grid component="main" my={15} className={classes.root}>
+            <Grid container direction="row" justify="space-evenly"  alignItems="flex-start">
+
+            <Grid  xs={12} sm={12} xl={6} md={6}   className={classes.root}>
                 <CssBaseline />
                 <Card>
                     <CardContent>
-                        <Graficos />
+                          <br />
+                        < SituacionRiesgoCard />
+                        <br />
+                       
+                      
                     </CardContent>
                 </Card>
+
+                
+            </Grid>
+            <Grid  xs={12} sm={12} xl={6} md={6}   className={classes.root}>
+                <CssBaseline />
+                <Card>
+                    <CardContent>
+                          
+                        <br />
+                       < GrafCumplimiento />
+                      
+                    </CardContent>
+                </Card>
+
+                
+            </Grid>
+
+       
+            </Grid>
+        
+            <Grid component="main" className={classes.root} >
+            <Grid  xs={12} sm={12} xl={12} md={12}   className={classes.root}>
+                <CssBaseline />
+                <Card>
+                    <CardContent>
+                       
+                        <Graficos />
+                        <Grid>
+                            <br />
+                        </Grid>
+                       
+                      
+                    </CardContent>
+                </Card>
+
+                
+            </Grid>
+
+            </Grid>
+            <Grid  container direction="row" justify="space-evenly" alignItems="flex-start" >
+            <Grid  xs={12} sm={12} xl={6} md={6}   className={classes.root}>
+                <CssBaseline />
+                <Card>
+                    <CardContent>
+                       
+                        < TblDOcumentoPortalchq />
+                    
+                      
+                       
+                      
+                    </CardContent>
+                </Card>
+
+                
             </Grid>
 
 
+            <Grid  xs={12} sm={12} xl={6} md={6}   className={classes.root}>
+                <CssBaseline />
+                <Card>
+                    <CardContent>
+                      
+                      
+                        
+                        <TblDetalleConsultasRut />
+                    
+                        
+                      
+                    </CardContent>
+                </Card>
 
+                
+            </Grid>
 
+            </Grid>
+         
+           
+            
+           
 
-
-
-
+      
 
         </>
     )
