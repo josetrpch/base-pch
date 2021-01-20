@@ -29,6 +29,7 @@ const useStyles = makeStyles((theme) => ({
         margin: theme.spacing(1, 0, 1),
         padding: theme.spacing(1),
         color: theme.palette.primary,
+        backgroundColor : '#bf0215',
         
 
     },
@@ -36,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
         width: '100%',
         margin: theme.spacing(2, 0, 1),
         padding: theme.spacing(1),
-        color: theme.palette.secondary.main,
+        color: '#bf0215',
 
     },
     textField: {
@@ -118,7 +119,7 @@ const FormMultiplesRut = () => {
                             onClick={ConsultaDatos}
                         >Informe Comercial
                     </Button>
-                        <Button variant="primary" color="segondary" className={classes.cancel}>
+                        <Button variant="primary" color="secondary" className={classes.cancel}>
                             Cancelar
                     </Button>
 
