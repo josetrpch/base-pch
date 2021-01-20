@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import clsx from 'clsx';
 import { TextField, Grid, Button, Avatar, Paper, Typography, makeStyles, CssBaseline, Card, CardContent, Box, Container, Divider, Tooltip } from '@material-ui/core';
-
+import Badge from '@material-ui/core/Badge';
 import Fab from '@material-ui/core/Fab';
 
 
@@ -70,6 +70,10 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
+const formatterPeso = new Intl.NumberFormat('es-CL', {
+    style: 'currency',
+    currency: 'CLP'
+  })
 
 const InformeRessult = () => {
     const classes = useStyles();
@@ -160,7 +164,6 @@ const InformeRessult = () => {
                             mb={1}
                         >
 
-
                             <Grid
                                 container
                                 direction="row"
@@ -218,16 +221,20 @@ const InformeRessult = () => {
                                         </div>
                                         <br />
                                         <div align="center">
+                                        <Badge badgeContent={2} color="primary">
                                             <Fab
                                                 aria-label="save"
                                                 className={classes.buttonSuccess}
                                                 align="center"
                                             >
                                                 <Typography variant="h5" align="center" >Si</Typography> &nbsp;
-                                                <Typography variant="p" align="center" >2</Typography>
+                                                
+                                              
+                                                
                                             </Fab>
-                                            <br />
-                                                <Typography variant="p" align="center" ><strong>Total Avalúo</strong> &nbsp; $ 55.404.682</Typography>
+                                            </Badge>
+                                            
+                                                <Typography  align="center" style={{marginTop : '15px'}} ><strong>Total Avalúo</strong> &nbsp; {formatterPeso.format(5582971)}</Typography>
                                         </div>
 
                                     </CardContent>
@@ -269,9 +276,9 @@ const InformeRessult = () => {
 
             </Grid>
 
-            <Grid container direction="row" justify="space-evenly"  alignItems="flex-start">
+            <Grid container direction="row" justify="space-evenly" spacing={2}   alignItems="flex-start" >
 
-            <Grid  xs={12} sm={12} xl={6} md={6}   className={classes.root}>
+            <Grid  xs={12} sm={12} xl={6} md={6} className={classes.root} >
                 <CssBaseline />
                 <Card>
                     <CardContent>
@@ -285,7 +292,7 @@ const InformeRessult = () => {
 
                 
             </Grid>
-            <Grid  xs={12} sm={12} xl={6} md={6}   className={classes.root}>
+            <Grid  xs={12} sm={12} xl={6} md={6}   className={classes.root} spacing={2}>
                 <CssBaseline />
                 <Card>
                     <CardContent>
@@ -357,13 +364,7 @@ const InformeRessult = () => {
             </Grid>
 
             </Grid>
-         
-           
-            
-           
-
-      
-
+        
         </>
     )
 }

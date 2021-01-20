@@ -10,15 +10,11 @@ function App() {
 
   return (
     
-    
+
       
       <Menu/>
       
-    
-
-
-
-
+  
   );
 }
 
