@@ -27,6 +27,7 @@ import FormInfoCom from './FormInfoCom';
 import ViewInforme from '../components/Consultainforme/ViewInforme';
 
 import RegistroConsultas from './RegistroConsultas';
+import Soporte from './Soporte';
 
 const drawerWidth = 310;
 const useStyle = makeStyles( theme=>({
@@ -180,7 +181,7 @@ const Listas = ({open, handleDrawerClose}) => {
          
          <Route exact path="/consultamultiple" component={ FormMultiplesRut }/>
          <Route exact path="/administracion" component={RegistroConsultas}/>
-         <Route exact path="/soporte"/>
+         <Route exact path="/soporte" component={Soporte} />
          <Route exact path="/verificacion"/>
          <Route exact path="/informeComercial-result" component={ViewInforme} />
     </main>

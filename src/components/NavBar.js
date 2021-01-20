@@ -2,7 +2,7 @@ import React from 'react';
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
-import { IconButton, makeStyles, Button } from '@material-ui/core';
+import { IconButton, makeStyles, Button, Tooltip } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import HomeIcon from '@material-ui/icons/Home';
 import AccountBalanceIcon from '@material-ui/icons/AccountBalance';
@@ -44,6 +44,7 @@ const useStyle = makeStyles(theme => ({
 
 
 const NavBar = ({open, handleDrawerOpen}) => {
+  
     const classes = useStyle()
     return ( 
         <>
@@ -71,40 +72,54 @@ const NavBar = ({open, handleDrawerOpen}) => {
           color="inherit"
           
           >
+            <Tooltip title="Libros" >
             <LibraryBooksIcon/>
+            </Tooltip>
           </IconButton>
 
           <IconButton
           color="inherit"
           >
+            <Tooltip title="Verificacion de Cheques">
             <CheckCircleIcon/>
+            </Tooltip>
           </IconButton>
 
           <IconButton 
           color="inherit">
+            <Tooltip title="Analytics">
             <AssessmentIcon/>
+            </Tooltip>
           </IconButton>
 
           <IconButton
           color="inherit">
+            <Tooltip title="Verificacion de Orden de No Pago">
             <BlockIcon/>
+            </Tooltip>
           </IconButton>
 
           <IconButton
           color="inherit">
+            <Tooltip title="Verificacion de Factura">
             <DescriptionIcon/>
+            </Tooltip>
           </IconButton>
 
           <IconButton
           color="inherit">
+            <Tooltip title="Cobranza">
             <AccountBalanceIcon/>
+            </Tooltip>
           </IconButton>
 
           <IconButton 
           color="secondary"
           
           >
+            <Tooltip title="Productos">
             <HomeIcon/>
+            </Tooltip>
           </IconButton>
           <Typography variant="h6" noWrap>
             

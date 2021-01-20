@@ -1,16 +1,12 @@
-import React, { useState } from 'react';
-import { Link, Link as RouterLink, useHistory } from 'react-router-dom';
+import React from 'react';
 
-import { TextField, Grid, Button, Avatar, Paper, Typography, makeStyles, CssBaseline } from '@material-ui/core'
+import { TextField, Grid, Button, Avatar, Paper, Typography, makeStyles, CssBaseline, Container } from '@material-ui/core'
 
-import SearchIcon from '@material-ui/icons/SearchRounded';
+
+import BuildIcon from '@material-ui/icons/Build';
+import SearchIcon from '@material-ui/icons/Search';
 
 const useStyles = makeStyles((theme) => ({
-    root: {
-        height: '80vh',
-
-
-    },
 
     palette: {
         primary: {
@@ -24,17 +20,17 @@ const useStyles = makeStyles((theme) => ({
     },
 
     paper: {
-        margin: theme.spacing(5, 4),
+        margin: theme.spacing(5, 1),
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
     },
     avatar: {
-        margin: theme.spacing(2),
+        margin: theme.spacing(0),
         backgroundColor: theme.palette.primary.main,
     },
     form: {
-        width: '40%', // Fix IE 11 issue.
+        width: '50%', // Fix IE 11 issue.
         marginTop: theme.spacing(1),
     },
     submit: {
@@ -48,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
         width: '100%',
         margin: theme.spacing(2, 0, 1),
         padding: theme.spacing(1),
-        color: theme.palette.secondary.main,
+        color: 'white',
 
     },
     textField: {
@@ -59,42 +55,40 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-
-
-const FormMultiplesRut = () => {
+const FormInfoCom = () => {
     const classes = useStyles();
-    const history = useHistory();
-
-    const [values, setValues] = useState({ });
-
-    const hanledinputvalue = (e) => {
-        setValues(e.target.value);
-    }
-    
-    const ConsultaDatos = () => {
-    
-            history.push("/informeComercial-result");
-
-
-    }
-
-
     return (
         <div>
-            <Grid component="main" className={classes.root}>
+        <Container container xs={12} sm={8} md={8} xl={8} 
+        direction="column"
+        justify="center"
+        alignItems="center"   
+        className={classes.paper}       
+        >
                 <CssBaseline />
                 
-                <Grid item xs={12} sm={12} xl={12} component={Paper} elevation={1} className={classes.paper} square>
+                <Grid container xs={12} sm={8} md={8} xl={8}  component={Paper} elevation={3}  zeroMinWidth>
+                    <Grid item xs={12} sm={12} md={12} xl={12}                         
+                        direction="column"
+                        justify="center"
+                        alignItems="center">  
+
+                                                      
+                    <Typography component="h1" variant="h4" style={{textAlign: 'center', paddingTop: '5px'}} className={classes.paper} > {/*el component es para quelo tome como un h1 */}  
                     <Avatar className={classes.avatar} variant="rounded">
                         <SearchIcon />
                     </Avatar>
-                    <Typography component="h1" variant="h4"> {/*el component es para que lo tome como un h1 */}
-                        Consulta Informe comercial
+                        Informe Comercial                                  
                     </Typography>
-
+                    </Grid>
+                    <Grid container xs={12} sm={12} md={12} xl={12}         
+                    justify="space-around"
+                    alignItems="center" 
+                    >
+                                
+           
                     <form className={classes.form} noValidate autoComplete="off">
-
-                        <TextField
+                    <TextField
                             type="text"
                             id="standar-error"
                             margin="normal"
@@ -106,7 +100,7 @@ const FormMultiplesRut = () => {
                             autoFocus
                             inputProps={{ maxLength: 9 }}
                             helperText="Formato Requerido (264641799)"
-                            value={values.NRut}
+                            
                         />
                         <TextField
                             type="text"
@@ -120,7 +114,7 @@ const FormMultiplesRut = () => {
                             autoFocus
                             inputProps={{ maxLength: 9 }}
                             helperText="Formato Requerido (601456988)"
-                            value={values.NSerie}
+                            
 
                         />
                   
@@ -130,7 +124,7 @@ const FormMultiplesRut = () => {
                             variant="contained"
                             color="primary"
                             className={classes.submit}
-                            onClick={ConsultaDatos}
+                            
                         >Informe Comercial
                     </Button>
                         <Button variant="primary" color="segondary" className={classes.cancel}>
@@ -138,14 +132,14 @@ const FormMultiplesRut = () => {
                     </Button>
 
 
+
                     </form>
-                </Grid>
-
-            </Grid>
-
-
-
+                    </Grid>
+                    
+                    </Grid>
+                
+            </Container>
         </div>
     )
 }
-export default FormMultiplesRut;
+export default FormInfoCom;

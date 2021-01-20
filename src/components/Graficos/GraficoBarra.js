@@ -68,27 +68,31 @@ const GraficoBarra = () => {
     const classes = useStyles();
     
     return ( 
-        <div >
-            
-            
-            
-            
-        <Grid container justify="center" item  xs={12} sm={12} xl={12} component={Paper}  elevation={2} className={classes.paper}  square>
-        <Typography container component="h1" variant="h4" style={{textAlign: 'center', paddingTop: '20px'}} className={classes.paper}> {/*el component es para quelo tome como un h1 */}
-            Estadistica Anual de Consultas          
-        </Typography>
         
-        
-        <Bar data={data} options={opciones}  maxWidth="sm"   /> 
-        </Grid> 
             
+            
+            
+            <Container >
+                <Grid
+                item xs={12} sm={12} md={12} xl={12} 
+                direction="column"
+                justify="center"
+                alignItems="center">
+   
+            <Typography component="h1" variant="h4" style={{textAlign: 'center', paddingTop: '20px'}} className={classes.paper}> {/*el component es para quelo tome como un h1 */}
+                Estadistica Anual de Consultas          
+            </Typography>
+
+            <Bar data={data} options={opciones}  maxWidth="sm"/> 
+            </Grid>
+            </Container>
         
                 
                
                 
               
                    
-        </div>
+        
      );
 }
  
