@@ -288,8 +288,6 @@ const InformeRessult = () => {
                 </Card>
 
 
-
-
             </Grid>
 
             <Grid container direction="row" justify="space-evenly" spacing={2}   alignItems="flex-start" >
