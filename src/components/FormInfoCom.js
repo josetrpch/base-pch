@@ -30,11 +30,11 @@ const useStyles = makeStyles((theme) => ({
     },
     form: {
         width: '50%', // Fix IE 11 issue.
-        marginTop: theme.spacing(1),
+        marginTop: theme.spacing(0),
     },
     submit: {
         width: '100%',
-        margin: theme.spacing(1, 0, 1),
+        margin: theme.spacing(1, 0, 2),
         padding: theme.spacing(1),
         
         
@@ -141,9 +141,7 @@ const FormInfoCom = () => {
                             
                         >Informe Comercial
                     </Button>
-                        <Button variant="primary" color="secondary" className={classes.cancel}>
-                            Cancelar
-                    </Button>
+
 
 
 
