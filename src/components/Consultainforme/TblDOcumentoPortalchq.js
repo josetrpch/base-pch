@@ -92,7 +92,7 @@ const TblDOcumentoPortalchq =({className, ...rest})=>{
             className={clsx(classes.root, className)}
             {...rest}
             >
-            <CardHeader title="Detalle Consulta por Rut" />
+            <CardHeader title="Documento en portal cheque" />
                 <Divider />
             <PerfectScrollbar>
                 <Box minWidth={800}>

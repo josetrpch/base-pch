@@ -151,7 +151,7 @@ const InformeRessult = () => {
                                     <Typography variant="h5" align="center">999</Typography>
                                     
                                 </CardContent>
-                                <Typography align="center">Puntaje calculado al 27 OCt 2020</Typography>
+                                <Typography align="center">Puntaje calculado al 27 OCT 2020</Typography>
                                 
 
                             </Grid>
@@ -321,10 +321,8 @@ const InformeRessult = () => {
 
                 
             </Grid>
-
-       
             </Grid>
-        
+    
             <Grid component="main" className={classes.root} >
             <Grid  xs={12} sm={12} xl={12} md={12}   className={classes.root}>
                 <CssBaseline />
@@ -335,11 +333,8 @@ const InformeRessult = () => {
                         <Grid>
                             <br />
                         </Grid>
-                       
-                      
                     </CardContent>
                 </Card>
-
                 
             </Grid>
 
@@ -352,9 +347,6 @@ const InformeRessult = () => {
                        
                         < TblDOcumentoPortalchq />
                     
-                      
-                       
-                      
                     </CardContent>
                 </Card>
 
@@ -367,12 +359,8 @@ const InformeRessult = () => {
                 <Card>
                     <CardContent>
                       
-                      
-                        
                         <TblDetalleConsultasRut />
                     
-                        
-                      
                     </CardContent>
                 </Card>
 
