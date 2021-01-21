@@ -1,7 +1,9 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import {Bar} from 'react-chartjs-2';
-import { Grid, Paper,  Typography, makeStyles, Container } from '@material-ui/core';
+import { Grid, Paper,  Typography, makeStyles, Container, Button, Tooltip, IconButton, Hidden } from '@material-ui/core';
+import AssessmentIcon from '@material-ui/icons/Assessment';
+import CloseIcon from '@material-ui/icons/Close';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -10,6 +12,13 @@ const useStyles = makeStyles((theme) => ({
          
         
                 
+    },
+    submit: {
+        width: '5%',
+        margin: theme.spacing(1, -2, 1),
+        padding: theme.spacing(0),
+        
+
     },
 }))
 
@@ -20,6 +29,9 @@ const GraficoBarra = () => {
     const [nombre, setNombre] = useState([]);
     const [salario, setSalario] = useState([]);
 
+
+    
+
     const data = {
         //parametros a comprar 
         labels:nombre,
@@ -27,7 +39,7 @@ const GraficoBarra = () => {
         datasets:[{
             label:'Empleados',
 
-            backgroundColor: 'red',
+            backgroundColor: '#2196f3',
             borderColor: 'black',
             borderWidth: 1,
             hoverBackgroundColor: 'yellow',
@@ -72,13 +84,30 @@ const GraficoBarra = () => {
             
             
             
-            <Container >
+            <Container 
+            >
+                <Button variant="contained" size="small"  color="primary"                 
+                style={{float: 'right'}}
+                className={classes.submit} 
+                >
+                <IconButton
+                color="inherit"
+                >
+                  <Tooltip title="Cerrar">
+                  <CloseIcon  />
+                  </Tooltip>
+                </IconButton>
+                
+                </Button>
+
                 <Grid
                 item xs={12} sm={12} md={12} xl={12} 
                 direction="column"
                 justify="center"
-                alignItems="center">
-   
+                alignItems="center"
+                 >
+
+                
             <Typography component="h1" variant="h4" style={{textAlign: 'center', paddingTop: '20px'}} className={classes.paper}> {/*el component es para quelo tome como un h1 */}
                 Estadistica Anual de Consultas          
             </Typography>

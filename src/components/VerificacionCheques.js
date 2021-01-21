@@ -35,7 +35,7 @@ const useStyles = makeStyles(theme => ({
     },
     submit: {
         width: '100%',
-        margin: theme.spacing(2, 0, 1),
+        margin: theme.spacing(2, 0, 2),
         padding: theme.spacing(1),
         
 
@@ -168,7 +168,7 @@ const VerificacionCheques = () => {
                         
                         
                         >
-                        <option aria-label="None" value="" />
+                        <option aria-label="Banco" value="" />
                         <option value={10}>usuario 1</option>
                         <option value={20}>usuario 2</option>
                         <option value={30}>usuario 3</option>

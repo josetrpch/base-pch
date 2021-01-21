@@ -189,6 +189,7 @@ const Listas = ({open, handleDrawerClose}) => {
          <Route exact path="/soporte" component={Soporte} />
          <Route exact path="/verificacion" component={VerificacionCheques} />
          <Route exact path="/informeComercial-result" component={ViewInforme} />
+         
         
     </main>
     </Container>
