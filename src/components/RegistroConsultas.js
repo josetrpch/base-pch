@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
         width: '100%',
         margin: theme.spacing(1, 0, 1),
         padding: theme.spacing(1),
-        color: theme.palette.primary,
+        
 
     },
 
@@ -132,7 +132,7 @@ const RegistroConsultas = () => {
         justify="center"
         alignItems="center" >
             
-                <Button variant="contained" size="large"  color="primary" className={classes.form}>
+                <Button variant="contained" size="large"  color="secondary" className={classes.form}>
                 Consultar
                 </Button>
             

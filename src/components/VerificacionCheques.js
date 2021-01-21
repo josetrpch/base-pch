@@ -1,13 +1,12 @@
 import React from 'react';
+import { TextField, Grid, Button, Avatar, Paper, Typography, makeStyles, CssBaseline, Container, NativeSelect } from '@material-ui/core';
+import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 
-import { TextField, Grid, Button, Avatar, Paper, Typography, makeStyles, CssBaseline, Container } from '@material-ui/core'
 
 
-import SearchIcon from '@material-ui/icons/Search';
-import BuildIcon from '@material-ui/icons/Build';
 
-const useStyles = makeStyles((theme) => ({
 
+const useStyles = makeStyles(theme => ({
     palette: {
         primary: {
             main: '#303f9f',
@@ -20,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     },
 
     paper: {
-        margin: theme.spacing(5, 1),
+        margin: theme.spacing(4, 1),
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -31,11 +30,12 @@ const useStyles = makeStyles((theme) => ({
     },
     form: {
         width: '50%', // Fix IE 11 issue.
-        marginTop: theme.spacing(1),
+        marginTop: theme.spacing(0),
+        
     },
     submit: {
         width: '100%',
-        margin: theme.spacing(1, 0, 1),
+        margin: theme.spacing(2, 0, 1),
         padding: theme.spacing(1),
         
 
@@ -47,15 +47,15 @@ const useStyles = makeStyles((theme) => ({
         color: 'white',
 
     },
-    textField: {
-        marginLeft: theme.spacing(2),
-        marginRight: theme.spacing(2),
-        width: '100vh',
+
+    select: {
+        width: '100%',
     },
+}))
 
-}));
 
-const FormMultiplesRut = () => {
+
+const VerificacionCheques = () => {
     const classes = useStyles();
     return (
         <div>
@@ -67,7 +67,7 @@ const FormMultiplesRut = () => {
         >
                 <CssBaseline />
                 
-                <Grid container xs={12} sm={8} md={8} xl={8}  component={Paper} elevation={3}  zeroMinWidth>
+                <Grid container xs={12} sm={8} md={8} xl={8}  component={Paper}  elevation={3}  zeroMinWidth>
                     <Grid item xs={12} sm={12} md={12} xl={12}                         
                         direction="column"
                         justify="center"
@@ -76,9 +76,9 @@ const FormMultiplesRut = () => {
                                                       
                     <Typography component="h1" variant="h4" style={{textAlign: 'center', paddingTop: '5px'}} className={classes.paper} > {/*el component es para quelo tome como un h1 */}  
                     <Avatar className={classes.avatar} variant="rounded">
-                        <SearchIcon />
+                        <CheckCircleIcon />
                     </Avatar>
-                        Consulta Multiple                                  
+                        Verificacion de Cheques y ONP                                  
                     </Typography>
                     </Grid>
                     <Grid container xs={12} sm={12} md={12} xl={12}         
@@ -110,14 +110,14 @@ const FormMultiplesRut = () => {
                             name="Nserie"
                             variant="outlined"
                             required
-                            label="Rut"
+                            label="Serie"
                             autoFocus
                             inputProps={{ maxLength: 9 }}
                             helperText="Formato Requerido (601456988)"
                             
 
                         />
-                                                <TextField
+                        <TextField
                             type="text"
                             xs={12} sm={12} md={12} xl={12}  id="standar-error"
                             margin="normal"
@@ -125,14 +125,14 @@ const FormMultiplesRut = () => {
                             name="Nserie"
                             variant="outlined"
                             required
-                            label="Rut"
+                            label="Cuenta Corriente"
                             autoFocus
                             inputProps={{ maxLength: 9 }}
                             helperText="Formato Requerido (601456988)"
                             
 
                         />
-                                                <TextField
+                        <TextField
                             type="text"
                             xs={12} sm={12} md={12} xl={12}  id="standar-error"
                             margin="normal"
@@ -140,13 +140,39 @@ const FormMultiplesRut = () => {
                             name="Nserie"
                             variant="outlined"
                             required
-                            label="Rut"
+                            label="Numero de Documento"
                             autoFocus
                             inputProps={{ maxLength: 9 }}
                             helperText="Formato Requerido (601456988)"
                             
 
                         />
+                         <TextField
+                            type="text"
+                            xs={12} sm={12} md={12} xl={12}  id="standar-error"
+                            margin="normal"
+                            fullWidth
+                            name="Nserie"
+                            variant="outlined"
+                            required
+                            label="Monto"
+                            autoFocus
+                            inputProps={{ maxLength: 9 }}
+                            helperText="Formato Requerido (601456988)"
+                            
+
+                        />
+                        <NativeSelect
+                        id="demo-customized-select-native"
+                        className={classes.select}
+                        
+                        
+                        >
+                        <option aria-label="None" value="" />
+                        <option value={10}>usuario 1</option>
+                        <option value={20}>usuario 2</option>
+                        <option value={30}>usuario 3</option>
+                    </NativeSelect>   
                         
                   
                         <Button
@@ -156,10 +182,7 @@ const FormMultiplesRut = () => {
                             color="secondary"
                             className={classes.submit}
                             
-                        >Informe Comercial
-                    </Button>
-                        <Button variant="primary" color="segondary" className={classes.cancel}>
-                            Cancelar
+                        >Consultar
                     </Button>
 
 
@@ -172,4 +195,5 @@ const FormMultiplesRut = () => {
         </div>
     )
 }
-export default FormMultiplesRut;
+ 
+export default VerificacionCheques;
