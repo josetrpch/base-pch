@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
         width: '100%',
         margin: theme.spacing(1, 0, 1),
         padding: theme.spacing(1),
-        color: theme.palette.primary,
+        
 
     },
     cancel: {
@@ -131,7 +131,7 @@ const Soporte = () => {
                             type="submit"
                             xs={12} sm={12} md={12} xl={12}  
                             variant="contained"
-                            color="primary"
+                            color="secondary"
                             className={classes.submit}
                             endIcon={<SendIcon />}
                         >

@@ -1,19 +1,20 @@
 import React from 'react';
 
 import Menu from './components/Menu';
-import { themeConfig } from './themeConfig';
+import  theme  from './themeConfig';
+import {ThemeProvider} from '@material-ui/core/styles';
 
 
-import { IconButton, makeStyles } from '@material-ui/core';
+
 
 function App() {
 
   return (
     
 
-      
+      <ThemeProvider theme={theme} >
       <Menu/>
-      
+      </ThemeProvider>
   
   );
 }

@@ -36,8 +36,8 @@ const useStyles = makeStyles((theme) => ({
         width: '100%',
         margin: theme.spacing(1, 0, 1),
         padding: theme.spacing(1),
-        color: theme.palette.primary,
-        backgroundColor : '#bf0215',
+        
+        
         
 
     },
@@ -97,7 +97,9 @@ const FormInfoCom = () => {
                                 
            
                     <form className={classes.form} noValidate autoComplete="off">
+                    
                     <TextField
+
                             type="text"
                             id="standar-error"
                             margin="normal"
@@ -111,7 +113,9 @@ const FormInfoCom = () => {
                             helperText="Formato Requerido (264641799)"
                             
                         />
+                        
                         <TextField
+
                             type="text"
                             id="standar-error"
                             margin="normal"

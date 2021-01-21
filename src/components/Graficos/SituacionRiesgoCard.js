@@ -35,19 +35,19 @@ const SituacionRiesgoCard =() => {
       <CardHeader title="Situación de Riesgo" />
     <Divider />
           <Grid container  direction="row" justify="center" alignItems="center" >
-    <Grid item={true} xs={12} md={4}  >
-            <Alert severity="error"><Typography variant="h5" style={{color:'while'}}>Alto</Typography></Alert>
+    <Grid item={true} xs={12} sm={4} md={4}  >
+            <Alert severity="error"><Typography variant="h5" >Alto</Typography></Alert>
         </Grid>
  
-    <Grid item={true} xs={12} md={4}  >
-            <Alert severity="warning"><Typography variant="h5" style={{color:'while'}}>Medio</Typography></Alert>
+    <Grid item={true} xs={12} sm={4} md={4}  >
+            <Alert severity="warning"><Typography variant="h5" >Medio</Typography></Alert>
     </Grid>
-    <Grid item={true} xs={12} md={4} className={classes.SeleccionSituacionRiesgo} >
+    <Grid item={true} xs={12} sm={4} md={4} className={classes.SeleccionSituacionRiesgo} >
     <Card >
         <CardContent>
            
-            <Alert severity="info"><Typography variant="h5" style={{color:'while'}}>Bajo</Typography></Alert>
-            <Typography variant="h4" style={{color:'while', background: '#f5f5f5'}} align="center">< CheckIcon /> </Typography>
+            <Alert severity="info"><Typography variant="h5" >Bajo</Typography></Alert>
+            <Typography variant="h4" style={{background: '#f5f5f5'}} align="center">< CheckIcon /> </Typography>
 
         </CardContent>
         
