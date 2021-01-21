@@ -1,7 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
-import { Bar } from 'react-chartjs-2';
+import { Line } from 'react-chartjs-2';
 import {
   Box,
   Button,
@@ -27,17 +27,17 @@ const Graficos = ({ className, ...rest }) => {
   const data = {
     datasets: [
       {
-        backgroundColor: colors.indigo[500],
-        data: [18, 5, 19, 27, 29, 19, 20],
-        label: 'This year'
+        backgroundColor: colors.grey[250],
+        data: [0, 10, 0, 29, 29, 0, 0],
+        label: 'Q: Morosidad'
       },
-      {
+     /* {
         backgroundColor: colors.grey[200],
         data: [11, 20, 12, 29, 30, 25, 13],
         label: 'Last year'
-      }
+      }*/
     ],
-    labels: ['1 Aug', '2 Aug', '3 Aug', '4 Aug', '5 Aug', '6 Aug']
+    labels: ['Mas de 24 Meses', '12 A 24 Meses', '6 a 12 Meses', 'Ultimo 6 Meses']
   };
 
   const options = {
@@ -107,10 +107,10 @@ const Graficos = ({ className, ...rest }) => {
             size="small"
             variant="text"
           >
-            Last 7 days
+            Filtrar
           </Button>
         )}
-        title="Latest Sales"
+        title="Periodo de Morosidad"
       />
       <Divider />
       <CardContent>
@@ -118,14 +118,14 @@ const Graficos = ({ className, ...rest }) => {
           height={400}
           position="relative"
         >
-          <Bar
+          <Line
             data={data}
             options={options}
           />
         </Box>
       </CardContent>
       <Divider />
-      <Box
+      {/*<Box
         display="flex"
         justifyContent="flex-end"
         p={2}
@@ -138,7 +138,7 @@ const Graficos = ({ className, ...rest }) => {
         >
           más detalle
         </Button>
-      </Box>
+      </Box>*/}
     </Card>
   );
 };

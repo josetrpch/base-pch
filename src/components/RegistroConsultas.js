@@ -14,29 +14,35 @@ import {
     KeyboardDatePicker
 } from '@material-ui/pickers'
 
+import GraficoBarra from './Graficos/GraficoBarra';
+
 
 const useStyles = makeStyles((theme) => ({
-    paper: {
-        margin: theme.spacing(3, 4),
-         
+    root: {
+        height: '80vh',
         
+    },
+    paper: {
+        margin: theme.spacing(3, 4),                
                 
     },
     form: {
         
         marginLeft: theme.spacing(4),
-        marginRight: theme.spacing(2),
-        width: '60%',
+        marginRight: theme.spacing(3),
+        width: '30%',
         marginTop: theme.spacing(4),
         marginBottom: theme.spacing(4),
+        
     },
     submit: {
-        width: '50%',
-        margin: theme.spacing(1, 18, 1),
+        width: '100%',
+        margin: theme.spacing(1, 0, 1),
         padding: theme.spacing(1),
         color: theme.palette.primary,
 
     },
+
 }))
 
 const RegistroConsultas = () => {
@@ -48,14 +54,25 @@ const RegistroConsultas = () => {
     
     const classes = useStyles();
     return ( 
-    <Grid container justify='space-around' item xs={12} sm={12} xl={12}  component={Paper} elevation={3} className={classes.paper} square>
+        <>
+        <Container container xs={12} sm={8} md={8} xl={8} 
+        direction="column"
+        justify="center"
+        alignItems="center" 
+        className={classes.paper} 
+        >
+    <Grid container xs={12} sm={12} md={12} xl={12}  component={Paper} elevation={3}  zeroMinWidth>
         <Grid item md={12} sm={12}>
-        <Typography component="h1" variant="h4" style={{textAlign: 'center', paddingTop: '20px'}}> {/*el component es para quelo tome como un h1 */}
+        <Typography component="h1" variant="h4" style={{textAlign: 'center', paddingTop: '20px'}} className={classes.paper} > {/*el component es para quelo tome como un h1 */}
             Registro de Consultas            
         </Typography>
         </Grid> 
-        <Grid item md={4} sm={4} >
-            <FormControl className={classes.form} >
+
+        <Grid container xs={12} sm={12} md={12} xl={12}         
+        justify="space-around"
+        alignItems="center" 
+        >
+            <FormControl  >
                 <FormLabel> Usuarios </FormLabel>
                     <NativeSelect
                         id="demo-customized-select-native"
@@ -65,12 +82,10 @@ const RegistroConsultas = () => {
                         <option value={10}>usuario 1</option>
                         <option value={20}>usuario 2</option>
                         <option value={30}>usuario 3</option>
-                    </NativeSelect>
-                
+                    </NativeSelect>                
             </FormControl>
-        </Grid>
-        <Grid item md={4} sm={4}>
-            <FormControl className={classes.form}>
+
+            <FormControl >
                 <FormLabel> Desde </FormLabel>
                 <MuiPickersUtilsProvider utils={DateFnsUtils}>
                     <KeyboardDatePicker    
@@ -83,15 +98,10 @@ const RegistroConsultas = () => {
                     onChange={handleDate}
                     KeyboardButtonProps={{'aria-label' : 'change date'}}
                     />
-                        
-
-                    </MuiPickersUtilsProvider>
-                
+                </MuiPickersUtilsProvider>                
             </FormControl>
-        </Grid>
 
-        <Grid item md={4} sm={4}>
-            <FormControl className={classes.form}>
+            <FormControl >
                 <FormLabel> Hasta </FormLabel>
                 <MuiPickersUtilsProvider utils={DateFnsUtils}>
                     <KeyboardDatePicker    
@@ -103,21 +113,56 @@ const RegistroConsultas = () => {
                     value={selectDate}
                     onChange={handleDate}
                     KeyboardButtonProps={{'aria-label' : 'change date'}}
-                    />
-                        
-
-                    </MuiPickersUtilsProvider>
-                
+                    />                       
+                </MuiPickersUtilsProvider>                
             </FormControl>
+
         </Grid>
-        <Container container justify='center'>
-        <Button variant="contained" size="medium" color="primary" className={classes.submit} >
-          Consultar
-        </Button>
 
+        
 
-        </Container>
+        
+
+        
+
+        
+
+        <Grid container xs={12} sm={12} md={12} xl={12} 
+        
+        justify="center"
+        alignItems="center" >
+            
+                <Button variant="contained" size="large"  color="primary" className={classes.form}>
+                Consultar
+                </Button>
+            
+        </Grid>
+
     </Grid>
+
+        <Grid 
+        item xs={12} sm={12} md={12} xl={12} 
+        direction="column"
+        justify="center"
+        alignItems="center"
+        component={Paper}
+        elevation={3}
+        >
+        <GraficoBarra />
+        </Grid>
+        
+        </Container>
+    
+
+
+        
+
+        
+
+    </>
+
+
+
      );
 }
  
