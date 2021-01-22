@@ -2,7 +2,7 @@ import React from 'react';
 
 import MuiAlert from '@material-ui/lab/Alert';
 import { makeStyles } from '@material-ui/core/styles';
-import { Card, CardContent, CardHeader, Paper, Typography, Grid, Divider } from '@material-ui/core';
+import { Card, CardContent, CardHeader, Paper, Typography, Grid, Divider, Button } from '@material-ui/core';
 
 import ArrowDropUpIcon from '@material-ui/icons/ArrowDropUp';
 import CheckIcon from '@material-ui/icons/Check';
@@ -21,12 +21,16 @@ const useStyles = makeStyles((theme) => ({
     SeleccionSituacionRiesgo : {
         backgroundColor : '#f5f5f5',
         
-    }
+    }, 
+
+    
+    
+
   },
 }));
 
 const SituacionRiesgoCard =() => {
-  const classes = useStyles();
+  const estilo = useStyles();
   const [open, setOpen] = React.useState(false);
 
 
@@ -36,17 +40,45 @@ const SituacionRiesgoCard =() => {
     <Divider />
           <Grid container  direction="row" justify="center" alignItems="center" >
     <Grid item={true} xs={12} sm={4} md={4}  >
-            <Alert severity="error"><Typography variant="h5" >Alto</Typography></Alert>
-        </Grid>
+        <Button variant="contained" style={{
+        
+         width: '100%',
+         backgroundColor: '#ed3939', 
+         color: 'white',
+         height: '100px',
+         fontsize: '20px',
+          }} >
+        Alto
+      </Button>
+          
+    </Grid>
  
     <Grid item={true} xs={12} sm={4} md={4}  >
-            <Alert severity="warning"><Typography variant="h5" >Medio</Typography></Alert>
+    <Button variant="contained" style={{
+        
+        width: '100%',
+        backgroundColor: '#f5a30a', 
+        color: 'white',
+        height: '100px',
+        fontsize: '20px',
+         }} >
+       Medio
+     </Button>
     </Grid>
-    <Grid item={true} xs={12} sm={4} md={4} className={classes.SeleccionSituacionRiesgo} >
+    <Grid item={true} xs={12} sm={4} md={4} className={estilo.SeleccionSituacionRiesgo} >
     <Card >
         <CardContent>
            
-            <Alert severity="info"><Typography variant="h5" >Bajo</Typography></Alert>
+        <Button variant="contained" style={{
+        
+        width: '100%',
+        backgroundColor: '#22a820', 
+        color: 'white',
+        height: '100px',
+        fontsize: '20px',
+         }} >
+       Bajo
+     </Button>
             <Typography variant="h4" style={{background: '#f5f5f5'}} align="center">< CheckIcon /> </Typography>
 
         </CardContent>

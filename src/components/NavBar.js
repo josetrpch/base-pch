@@ -14,6 +14,9 @@ import LibraryBooksIcon from '@material-ui/icons/LibraryBooks';
 
 import clsx from 'clsx';
 
+import Analytics from '../assets/imagenes/Analytics.png';
+import InformerComercial from '../assets/imagenes/InformeComercialPlus1.png';
+
 const drawerWidth = 310;
 
 const useStyle = makeStyles(theme => ({
@@ -72,8 +75,8 @@ const NavBar = ({open, handleDrawerOpen}) => {
           color="inherit"
           
           >
-            <Tooltip title="Libros" >
-            <LibraryBooksIcon/>
+            <Tooltip title="informe comercial" >
+              <img src={InformerComercial} style={{width:'50px', height:'50px'}} />
             </Tooltip>
           </IconButton>
 
