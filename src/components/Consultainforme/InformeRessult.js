@@ -1,9 +1,11 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import ReactDOM from 'react-dom';
 import clsx from 'clsx';
 import { TextField, Grid, Button, Avatar, Paper, Typography, makeStyles, CssBaseline, Card, CardContent, Box, Container, Divider, Tooltip } from '@material-ui/core';
 import Badge from '@material-ui/core/Badge';
 import Fab from '@material-ui/core/Fab';
+import CheckIcon from '@material-ui/icons/Check';
+
 
 
 import Graficos from '../Graficos/Graficos';
@@ -11,6 +13,7 @@ import TblDetalleConsultasRut from './TblDetalleConsultasRut';
 import SituacionRiesgoCard from '../Graficos/SituacionRiesgoCard';
 import GrafCumplimiento from '../Graficos/GrafCumplimiento';
 import TblDOcumentoPortalchq from './TblDOcumentoPortalchq';
+
 const useStyles = makeStyles((theme) => ({
     root: {
         height: 'auto',
@@ -75,13 +78,20 @@ const formatterPeso = new Intl.NumberFormat('es-CL', {
     currency: 'CLP'
   })
 
-const InformeRessult = () => {
-    const classes = useStyles();
 
+const InformeRessult = (props) => {
+    const classes = useStyles();
+   
+
+  
 
     return (
         <>
-
+       
+       
+       
+  
+   
             <Grid component="main" >
                 <CssBaseline />
                 <Card>
@@ -179,11 +189,11 @@ const InformeRessult = () => {
                                         <div align="center">
                                             <Fab
                                                 aria-label="save"
-                                                className={classes.ButtonDanger}
+                                                className={classes.buttonSuccess}
                                                 align="center"
                                             >
                                                <Tooltip title="Ver más información">
-                                               <Typography variant="h5" align="center" >No</Typography>
+                                               <Typography variant="h5" align="center" ><CheckIcon/></Typography>
                                                 </Tooltip>
                                               
                                             </Fab>
@@ -206,7 +216,7 @@ const InformeRessult = () => {
                                                 className={classes.buttonSuccess}
                                                 align="center"
                                             >
-                                               <Typography variant="h5" align="center" >Si</Typography>
+                                               <Typography variant="h5" align="center" ><CheckIcon/></Typography>
                                             </Fab>
                                         </div>
                                     </CardContent>
@@ -227,7 +237,7 @@ const InformeRessult = () => {
                                                 className={classes.buttonSuccess}
                                                 align="center"
                                             >
-                                                <Typography variant="h5" align="center" >Si</Typography> &nbsp;
+                                                <Typography variant="h5" align="center" ><CheckIcon/></Typography> &nbsp;
                                                 
                                               
                                                 
@@ -254,7 +264,7 @@ const InformeRessult = () => {
                                                 className={classes.buttonSuccess}
                                                 align="center"
                                             >
-                                               <Typography variant="h5" align="center" >Si</Typography>
+                                               <Typography variant="h5" align="center" ><CheckIcon/></Typography>
                                             </Fab>
                                         </div>
 
@@ -351,11 +361,7 @@ const InformeRessult = () => {
                 <Card>
                     <CardContent>
                       
-                      
-                        
                         <TblDetalleConsultasRut />
-                    
-                        
                       
                     </CardContent>
                 </Card>
@@ -364,7 +370,7 @@ const InformeRessult = () => {
             </Grid>
 
             </Grid>
-        
+    
         </>
     )
 }

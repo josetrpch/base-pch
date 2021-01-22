@@ -2,18 +2,19 @@ import React from 'react';
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
-import { IconButton, makeStyles, Button, Tooltip } from '@material-ui/core';
+import { IconButton, makeStyles, Tooltip, Link} from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
-import HomeIcon from '@material-ui/icons/Home';
-import AccountBalanceIcon from '@material-ui/icons/AccountBalance';
-import DescriptionIcon from '@material-ui/icons/Description';
-import BlockIcon from '@material-ui/icons/Block';
-import AssessmentIcon from '@material-ui/icons/Assessment';
-import CheckCircleIcon from '@material-ui/icons/CheckCircle';
-import LibraryBooksIcon from '@material-ui/icons/LibraryBooks';
+
+import AccountCircle from '@material-ui/icons/AccountCircle';
 
 import clsx from 'clsx';
 
+import Analytics from '../assets/imagenes/Analytics.png';
+import InformerComercial from '../assets/imagenes/InformeComercialPlus1.png';
+import VerCheque from '../assets/imagenes/Vdecheques.png';
+import VOdenopago from '../assets/imagenes/VOdenopago.png'; 
+import Vdefacturas from '../assets/imagenes/Vdefacturas.png';
+import Cobranza from '../assets/imagenes/Cobranza.png';
 const drawerWidth = 310;
 
 const useStyle = makeStyles(theme => ({
@@ -45,9 +46,11 @@ const useStyle = makeStyles(theme => ({
 
 const NavBar = ({open, handleDrawerOpen}) => {
   
-    const classes = useStyle()
+    const classes = useStyle(); 
+    
     return ( 
         <>
+        
           <AppBar
         position="fixed"
         className={clsx(classes.appBar, {
@@ -72,8 +75,8 @@ const NavBar = ({open, handleDrawerOpen}) => {
           color="inherit"
           
           >
-            <Tooltip title="Libros" >
-            <LibraryBooksIcon/>
+            <Tooltip title="informe comercial" >
+             <Link  href="/informecomercial"><img src={InformerComercial} style={{width:'50px', height:'50px'}} /></Link> 
             </Tooltip>
           </IconButton>
 
@@ -81,49 +84,39 @@ const NavBar = ({open, handleDrawerOpen}) => {
           color="inherit"
           >
             <Tooltip title="Verificacion de Cheques">
-            <CheckCircleIcon/>
+            <img src={VerCheque} style={{width:'50px', height:'50px'}} />
             </Tooltip>
           </IconButton>
 
           <IconButton 
           color="inherit">
             <Tooltip title="Analytics">
-            <AssessmentIcon/>
+            <img src={Analytics} style={{width:'50px', height:'50px'}} />
             </Tooltip>
           </IconButton>
 
           <IconButton
           color="inherit">
             <Tooltip title="Verificacion de Orden de No Pago">
-            <BlockIcon/>
+            <img src={VOdenopago} style={{width:'50px', height:'50px'}} />
             </Tooltip>
           </IconButton>
 
           <IconButton
           color="inherit">
             <Tooltip title="Verificacion de Factura">
-            <DescriptionIcon/>
+            <img src={Vdefacturas} style={{width:'50px', height:'50px'}} />
             </Tooltip>
           </IconButton>
 
           <IconButton
           color="inherit">
             <Tooltip title="Cobranza">
-            <AccountBalanceIcon/>
+            <img src={Cobranza} style={{width:'50px', height:'50px'}} />
             </Tooltip>
           </IconButton>
 
-          <IconButton 
-          color="secondary"
           
-          >
-            <Tooltip title="Productos">
-            <HomeIcon/>
-            </Tooltip>
-          </IconButton>
-          <Typography variant="h6" noWrap>
-            
-          </Typography>
         </Toolbar>
       </AppBar>
         </>
